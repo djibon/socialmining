@@ -22,15 +22,15 @@ def twitter_search(twitter_api, q, max_results=200, **kw):
     
     for _ in range(10):
         try:
-            next_results = search_results['search_metadata']['next_results']
+            next_results = results['search_metadata']['next_results']
         except KeyError, e: # No more results when next_results doesn't exist
             break
             
         kwargs = dict([ kv.split('=') 
                         for kv in next_results[1:].split("&") ])
         
-        search_results = twitter_api.search.tweets(**kwargs)
-        statuses += search_results['statuses']
+        results = twitter_api.search.tweets(**kwargs)
+        statuses += results['statuses']
         
         if len(statuses) > max_results: 
             break

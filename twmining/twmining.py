@@ -51,8 +51,3 @@ def do_search(keywords):
     
     data = twitter_search(twitter_api, keywords)
     return data
-
-if __name__ == '__main__':
-    import pprint
-    data = do_search('#projectnusantara')
-    print(data)

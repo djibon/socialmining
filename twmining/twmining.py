@@ -2,6 +2,11 @@ import twitter
 
 from twitter import OAuth
 
+OAUTH_TOKEN = '16924266-yHUeBUkFzSn1fSHerCEVRlmDBM7ZxuQxqe89MT1l4'
+OAUTH_TOKEN_SECRET = '5TMKnITDHd5Ug9OavnPH5oKVBjaz6wYJY2OZpxmJvd96S'
+CONSUMER_KEY = 'p63ISlzEnnpYvIO0ydz3Q'
+CONSUMER_SECRET = 'oAyiYqUF5XqPAJcIWc71gzptNmc1gK3QYru3CeSmU'
+
 def oauth_login(oauth_token, oauth_token_secret, consumer_key, consumer_secret):
     '''
     login and auth twitter based on token and secret.
@@ -34,5 +39,20 @@ def twitter_search(twitter_api, q, max_results=200, **kw):
         
         if len(statuses) > max_results: 
             break
-            
+    
     return statuses
+
+
+def do_search(keywords):
+    twitter_api = oauth_login(OAUTH_TOKEN,
+                              OAUTH_TOKEN_SECRET,
+                              CONSUMER_KEY,
+                              CONSUMER_SECRET)
+    
+    data = twitter_search(twitter_api, keywords)
+    return data
+
+if __name__ == '__main__':
+    import pprint
+    data = do_search('#projectnusantara')
+    print(data)

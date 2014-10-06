@@ -2,10 +2,10 @@ import twitter
 
 from twitter import OAuth
 
-OAUTH_TOKEN = '16924266-yHUeBUkFzSn1fSHerCEVRlmDBM7ZxuQxqe89MT1l4'
-OAUTH_TOKEN_SECRET = '5TMKnITDHd5Ug9OavnPH5oKVBjaz6wYJY2OZpxmJvd96S'
-CONSUMER_KEY = 'p63ISlzEnnpYvIO0ydz3Q'
-CONSUMER_SECRET = 'oAyiYqUF5XqPAJcIWc71gzptNmc1gK3QYru3CeSmU'
+OAUTH_TOKEN = ''
+OAUTH_TOKEN_SECRET = ''
+CONSUMER_KEY = ''
+CONSUMER_SECRET = ''
 
 def oauth_login(oauth_token, oauth_token_secret, consumer_key, consumer_secret):
     '''
